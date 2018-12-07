@@ -2,14 +2,34 @@
 *Files to look at*:
 
 * [Window1.xaml](./CS/Window1.xaml) (VB: [Window1.xaml](./VB/Window1.xaml))
+* [Window1.xaml.cs](./CS/Window1.xaml.cs) (VB: [Window1.xaml.vb](./VB/Window1.xaml.vb))
+
 <!-- default file list end -->
+
 # How to create a 2D Pie (Donut) chart
 
+This example demonstrates how to create a 2D Pie chart. 
 
-<p>The following example demonstrates how to create a 2D Pie chart. </p><p>For this, it's necessary to create a <a href="http://documentation.devexpress.com/#WPF/clsDevExpressXpfChartsChartControltopic"><u>ChartControl</u></a>, choose a <a href="http://documentation.devexpress.com/#WPF/clsDevExpressXpfChartsSimpleDiagram2Dtopic"><u>SimpleDiagram2D</u></a> object as its diagram and put <a href="http://documentation.devexpress.com/#WPF/clsDevExpressXpfChartsPieSeries2Dtopic"><u>PieSeries2D</u></a><strong> </strong>into its <a href="http://documentation.devexpress.com/#WPF/DevExpressXpfChartsDiagram_Seriestopic"><u>Series</u></a><strong> </strong>collection. Each point of a pie series should contain an argument and value, and their data type is automatically determined by the chart. </p><p>Pie appearance is defined by its <a href="http://documentation.devexpress.com/#WPF/DevExpressXpfChartsPieSeries2D_Modeltopic"><u>Model</u></a><strong> </strong>property and in this sample it's set to the built-in <a href="http://documentation.devexpress.com/#WPF/clsDevExpressXpfChartsGlarePie2DModeltopic"><u>GlarePie2DModel</u></a><strong> </strong>model. To specify the appearance and format of data point labels, adjust settings of the <a href="http://documentation.devexpress.com/#WPF/DevExpressXpfChartsSeries_PointOptionstopic"><u>PointOptions</u></a><strong> </strong>object. In addition, it's possible to provide a custom appearance for legend items via the <a href="http://documentation.devexpress.com/#WPF/DevExpressXpfChartsSeries_LegendPointOptionstopic"><u>LegendPointOptions</u></a> property.</p><p>Note that in this sample the label's <a href="http://documentation.devexpress.com/#WPF/DevExpressXpfChartsPointOptions_Patterntopic"><u>Pattern</u></a> is set to "{}{A}: {V}", which allows showing a point's argument and value separated by a colon. The available placeholders are detailed below.<br />
-<strong>{A}</strong>     Use it to display a series point's arguments.</p><p><strong>{V}</strong>     Use it to display a series point's values.</p><p><strong>{S}</strong>     Use it to display the series name.</p><br />
+![](Images/pie-chart-example.png)
 
+Create a [ChartControl](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.ChartControl.class) and specify its [ChartControl.Diagram](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.ChartControl.Diagram.property) property to a [SimpleDiagram2D](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.SimpleDiagram2D.class) object. 
 
-<br/>
+> Note that the **ChartControl.Diagram** is a content property. You can declare a diagram in XAML directly after a chart control's declaration without wrapping it in opening and closing **ChartControl.Diagram** tags.
 
+Add a [PieSeries2D](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.PieSeries2D.class) object to the [Diagram.Series](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.Diagram.Series.property) collection.
 
+> Note that the **Diagram.Series** is a content property. You can declare series in XAML directly after a diagram's declaration without wrapping them in opening and closing **Diagram.Series** tags.
+
+Use the following properties to bind the [series](https://documentation.devexpress.com/WPF/6339/Controls-and-Libraries/Charts-Suite/Chart-Control/Chart-Elements/Series) to data:
+
+- [Series.DataSource](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.Series.DataSource.property) - Specifies the series's data source.
+- [Series.ArgumentDataMember](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.Series.ArgumentDataMember.property) - Defines the data member that provides the series's arguments.
+- [Series.ValueDataMember](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.Series.ValueDataMember.property) - Specifies the data member that provides the series's values.
+
+The [PieSeries2D.Model](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.PieSeries2D.Model.property) property allows you to change the series appearance using the build-in models. This example uses the [GlarePie2DModel](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.GlarePie2DModel.class) model.
+
+Use the [Series.LegendTextPattern](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.Series.LegendTextPattern.property) property to specify how to format text that identifies series points in the [legends](https://documentation.devexpress.com/WPF/6343/Controls-and-Libraries/Charts-Suite/Chart-Control/Chart-Elements/Legends).
+
+The [SeriesLabel.TextPattern](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.SeriesLabel.TextPattern.property) property defines how to configure [series labels](https://documentation.devexpress.com/WPF/6341/Controls-and-Libraries/Charts-Suite/Chart-Control/Chart-Elements/Series/Series-Point-Labels)' text.
+
+The [PieTotalLabel.TextPattern](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.PieTotalLabel.TextPattern.property) property allows you to specify the center label's content.
