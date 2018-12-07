@@ -11,7 +11,7 @@
         <dxc:ChartControl Name="chartControl">
             <dxc:SimpleDiagram2D>
                 <dxc:PieSeries2D x:Name="series" 
-                                 DisplayName="series" 
+                                 DisplayName="Sales" 
                                  DataSource="{Binding Path=Data}"
                                  ArgumentDataMember="Argument" 
                                  ValueDataMember="Value"
