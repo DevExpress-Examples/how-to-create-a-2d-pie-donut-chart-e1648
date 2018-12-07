@@ -16,7 +16,8 @@
                                  ArgumentDataMember="Argument" 
                                  ValueDataMember="Value"
                                  LabelsVisibility="True" 
-                                 LegendTextPattern="{}{A}: {V}">
+                                 LegendTextPattern="{}{A}: {V}"
+                                 HoleRadiusPercent="50">
                     <!--region #Model-->
                     <dxc:PieSeries2D.Model>
                         <dxc:GlarePie2DModel/>
