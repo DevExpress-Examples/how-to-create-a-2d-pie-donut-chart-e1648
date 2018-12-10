@@ -26,7 +26,7 @@ Use the following properties to bind the [series](https://documentation.devexpre
 - [Series.ArgumentDataMember](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.Series.ArgumentDataMember.property) - Defines the data member that provides the series's arguments.
 - [Series.ValueDataMember](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.Series.ValueDataMember.property) - Specifies the data member that provides the series's values.
 
-The [PieSeries2D.Model](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.PieSeries2D.Model.property) property allows you to change the series appearance using the build-in models. This example uses the [GlarePie2DModel](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.GlarePie2DModel.class) model.
+The [PieSeries2D.Model](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.PieSeries2D.Model.property) property allows you to change the series appearance using the built-in models. This example uses the [GlarePie2DModel](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.GlarePie2DModel.class) model.
 
 Use the [Series.LegendTextPattern](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.Series.LegendTextPattern.property) property to specify how to format text that identifies series points in the [legends](https://documentation.devexpress.com/WPF/6343/Controls-and-Libraries/Charts-Suite/Chart-Control/Chart-Elements/Legends).
 
