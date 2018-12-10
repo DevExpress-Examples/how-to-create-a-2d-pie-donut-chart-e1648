@@ -1,40 +1,44 @@
-<Window x:Class="PieDonut2DChart.Window1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" Title="Window1" Height="350" Width="620">
+<Window x:Class="PieDonut2DChart.Window1" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+        xmlns:local="clr-namespace:PieDonut2DChart"
+        Title="Window1" Height="470" Width="700">
+    <Window.DataContext>
+        <local:ChartViewModel/>
+    </Window.DataContext>
     <Grid>
-        <dxc:ChartControl Name="chartControl1">
-            <dxc:ChartControl.Diagram>
-                <dxc:SimpleDiagram2D>
-                    <dxc:SimpleDiagram2D.Series>
-                        <dxc:PieSeries2D HoleRadiusPercent="0">
-                            <dxc:PieSeries2D.Points>
-                                <dxc:SeriesPoint Argument="A" Value="1" />
-                                <dxc:SeriesPoint Argument="B" Value="3" />
-                                <dxc:SeriesPoint Argument="C" Value="7" />
-                                <dxc:SeriesPoint Argument="D" Value="4" />
-                            </dxc:PieSeries2D.Points>
-                            <!--region #Model-->
-                            <dxc:PieSeries2D.Model>
-                                <dxc:GlarePie2DModel />
-                            </dxc:PieSeries2D.Model>
-                            <!--endregion #Model-->
-                            <dxc:PieSeries2D.PointOptions>
-                                <dxc:PointOptions>
-                                    <dxc:PointOptions.ValueNumericOptions>
-                                        <dxc:NumericOptions Format="Percent" Precision="0" />
-                                    </dxc:PointOptions.ValueNumericOptions>
-                                </dxc:PointOptions>
-                            </dxc:PieSeries2D.PointOptions>
-                            <!--region #LegendPointOptions-->
-                            <dxc:PieSeries2D.LegendPointOptions>
-                                <dxc:PointOptions Pattern="{}{A}: {V}" />
-                            </dxc:PieSeries2D.LegendPointOptions>
-                            <!--endregion #LegendPointOptions-->
-                        </dxc:PieSeries2D>
-                    </dxc:SimpleDiagram2D.Series>
-                </dxc:SimpleDiagram2D>
-            </dxc:ChartControl.Diagram>
-            <dxc:ChartControl.Legend>
-                <dxc:Legend />
-            </dxc:ChartControl.Legend>
+        <dxc:ChartControl Name="chartControl">
+            <dxc:SimpleDiagram2D>
+                <dxc:PieSeries2D x:Name="series" 
+                                 DisplayName="Sales" 
+                                 DataSource="{Binding Path=Data}"
+                                 ArgumentDataMember="Argument" 
+                                 ValueDataMember="Value"
+                                 LabelsVisibility="True" 
+                                 LegendTextPattern="{}{A}: {V}"
+                                 HoleRadiusPercent="50">
+                    <!--region #Model-->
+                    <dxc:PieSeries2D.Model>
+                        <dxc:GlarePie2DModel/>
+                    </dxc:PieSeries2D.Model>
+                    <!--endregion #Model-->
+                    <dxc:PieSeries2D.TotalLabel>
+                        <dxc:PieTotalLabel TextPattern="Total:&#x0a;{TV}"/>
+                    </dxc:PieSeries2D.TotalLabel>
+                    <dxc:PieSeries2D.Label>
+                        <dxc:SeriesLabel TextPattern="{}{VP:P}" 
+                                         dxc:PieSeries.LabelPosition="TwoColumns"/>
+                    </dxc:PieSeries2D.Label>
+                </dxc:PieSeries2D>
+            </dxc:SimpleDiagram2D>
+            <dxc:ChartControl.Legends>
+                <dxc:Legend>
+                    <dxc:Legend.Title>
+                        <dxc:LegendTitle Content="Units Sold"/>
+                    </dxc:Legend.Title>
+                </dxc:Legend>
+            </dxc:ChartControl.Legends>
         </dxc:ChartControl>
     </Grid>
 </Window>
