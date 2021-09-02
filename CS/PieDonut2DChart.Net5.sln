@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieDonut2DChart", "PieDonut2DChart.csproj", "{2F5B21C6-D442-4ACB-8EE3-CFFC1FCA15AF}"
+# Visual Studio 16
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PieDonut2DChart", "PieDonut2DChart.Net5.csproj", "{2F5B21C6-D442-4ACB-8EE3-CFFC1FCA15AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
