@@ -4,15 +4,9 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [Window1.xaml](./CS/Window1.xaml) (VB: [Window1.xaml](./VB/Window1.xaml))
-* [Window1.xaml.cs](./CS/Window1.xaml.cs) (VB: [Window1.xaml.vb](./VB/Window1.xaml.vb))
 
-<!-- default file list end -->
-
-# How to create a 2D Pie (Donut) chart
+# Charts for WPF - How to create a 2D Pie (Donut) chart
 
 This example demonstrates how to create a 2D Pie chart. 
 
@@ -39,6 +33,12 @@ Use the [Series.LegendTextPattern](https://documentation.devexpress.com/WPF/DevE
 The [SeriesLabel.TextPattern](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.SeriesLabel.TextPattern.property) property defines how to configure [series labels](https://documentation.devexpress.com/WPF/6341/Controls-and-Libraries/Charts-Suite/Chart-Control/Chart-Elements/Series/Series-Point-Labels)' text.
 
 The [PieTotalLabel.TextPattern](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Charts.PieTotalLabel.TextPattern.property) property allows you to specify the center label's content.
+
+## Files to Review
+
+* [Window1.xaml](./CS/Window1.xaml) (VB: [Window1.xaml](./VB/Window1.xaml))
+* [Window1.xaml.cs](./CS/Window1.xaml.cs) (VB: [Window1.xaml.vb](./VB/Window1.xaml.vb))
+
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
